@@ -15,15 +15,26 @@ int main() {
     int tabuleiro [10] [10] = {0};
     
         //Vetor com a posição do navio na horizontal (colunas 0,1,2)
+        //O numero 3 representa o tamanho do navio
         int navioHorizontal[3] = {0,1,2};
+        
+        //Adicionando um terceiro navio
+        int navioHorizontal2[3] = {4,5,6};
 
         //Vetor com a posição do navio na vertical (linhas 0,1,2)
         int navioVertical[3] = {0,1,2};
+
+        int navioVertical2[3] = {3,4,5};
         
         //declarando a posição do navio 1
         for (int i = 0; i < 3; i++)
         {
-            tabuleiro[5][navioHorizontal[i]] = 3; //O número 2 representa a linha que vai aparecer o 3 representa aparte do navio.
+            tabuleiro[5][navioHorizontal[i]] = 3; //O número 5 representa a linha que vai aparecer, o 3 representa a parte do navio.
+        }
+
+        for (int j = 0; j < 3; j++)
+        {
+            tabuleiro[7][navioHorizontal2[j]] = 3;
         }
 
         //declarando o navio 2
@@ -32,10 +43,19 @@ int main() {
             //Verifica se o espaço esta vazio para evitar sobreposição
             if (tabuleiro[navioVertical[i]][5] == 0)
             {
-                tabuleiro[navioVertical[i]][5] = 3;//A ordem invertida indica que esta na vertical, 5 é a linha, 3 representa parte do navio
+                tabuleiro[navioVertical[i]][5] = 3;//A ordem invertida indica que esta na vertical, 5 é a coluna, 3 representa parte do navio
             }
             
         }
+
+        for (int j = 0; j < 3; j++)
+        {
+            if (tabuleiro[navioVertical2[j]][6] == 0)
+            {
+                tabuleiro[navioVertical2[j]][6] = 3;
+            }
+        }
+        
         
         
 
